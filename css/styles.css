@@ -59,7 +59,7 @@
 
   .grid-container{
       display: grid;
-      grid-template: 70px 5fr 1fr/ 120px 1fr 1fr;
+      grid-template: 70px 5fr 1fr/ 80px 1fr 1fr;
       grid-template-areas: "header header header"
                             "side movies movies"
                             "options movies movies";
@@ -115,18 +115,18 @@
 
   .side-menu{
       grid-area: side;
-      background: aliceblue;
-      border: 1px solid rebeccapurple;
       background: #fd6766;
   }
 
   .side-menu-list{
-    list-style: none;
+   list-style: none;
+   padding-left: 20px;
+   margin: 5em 0 0 0;
   }
 
   .side-menu-list i{
-    color: white;
     font-size: 2em;
+    color: white;
   }
 
   .side-menu-list a{
@@ -135,16 +135,35 @@
 
   .side-menu-list p{
     color: white;
+    font-size: 12px;
+    margin-top: 1px;
   }
 
   .movies-panel{
       grid-area: movies;
       background: aliceblue;
-      border: 1px solid red;
+      border: 1px solid rebeccapurple;
   }
 
   .options{
     grid-area: options;
-    background: aliceblue;
-    border: 1px solid red;
+    background: #fd6766;
+    border-top: 1px solid white;
+    padding: 1.3em;
+  }
+
+  .options a{
+    text-decoration: none;
+    color: white;
+    
+  }
+
+  .options i{
+    font-size: 2em;
+  }
+
+  .options p{
+    color: white;
+    font-size: 14px;
+    margin-top: 4px;
   }
