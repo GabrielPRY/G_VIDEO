@@ -83,6 +83,12 @@
       margin-left: 20px;
   }
 
+  .header-logo-title{
+    grid-area: logo;
+    font-size: 2em;
+    margin: -3px 74px;
+  }
+
   .header-input-search{
       grid-area: search;
   }
@@ -112,6 +118,23 @@
       background: aliceblue;
       border: 1px solid rebeccapurple;
       background: #fd6766;
+  }
+
+  .side-menu-list{
+    list-style: none;
+  }
+
+  .side-menu-list i{
+    color: white;
+    font-size: 2em;
+  }
+
+  .side-menu-list a{
+    text-decoration: none;
+  }
+
+  .side-menu-list p{
+    color: white;
   }
 
   .movies-panel{
