@@ -63,7 +63,6 @@
       grid-template-areas: "header header header"
                             "side movies movies"
                             "options movies movies";
-    height: calc(100vh) ;
   }
 
   .header{
@@ -141,8 +140,44 @@
 
   .movies-panel{
       grid-area: movies;
-      background: aliceblue;
-      border: 1px solid rebeccapurple;
+      padding: 1em 3em;
+  }
+
+  .movie-grid{
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .movie-grid-item{
+    position: relative;
+    color: white;
+    overflow: hidden;
+  }
+
+  .movie-grid-item-img{
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .movie-grid-item-details{
+    background:rgb(0 0 0 / 65%);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: white;
+    padding: 0.5em;
+    height: 50%;
+  }
+
+  .movie-grid-item-details-title{
+    margin: 0 0 0.5em;
+  }
+
+  .movie-grid-item-details-sipnosis{
+    margin: 0;
+    font-weight: bold;
   }
 
   .options{
@@ -166,4 +201,77 @@
     color: white;
     font-size: 14px;
     margin-top: 4px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .grid-container{
+      grid-template: 80px 1fr 1fr / 80px 1fr 1fr;
+      grid-template-areas: "header header header"
+                            "side  movies movies"
+                            "options movies movies";
+    }
+
+    .header{
+      grid-template: 40px / 1fr 1fr 1fr;
+      grid-template-areas: "logo search user";
+    }
+
+    .movie-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media  screen and (max-width: 768px) {
+    .grid-container{
+      grid-template: 80px 1fr 1fr / 80px 1fr;
+      grid-template-areas: "header header"
+                            "side  movies"
+                            "options movies";
+    }
+
+    .header{
+      grid-template: 40px / 1fr 1fr 1fr;
+      grid-template-areas: "logo search user";
+    }
+
+    .movie-grid{
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media  screen and (max-width: 480px) {
+    .grid-container{
+      grid-template: 80px 1fr 1fr/ 80px 1fr;
+      grid-template-areas: "header header"
+                            "side  movies"
+                            "options movies";
+    }
+
+    .header{
+      grid-template: 40px / 1fr 1fr 1fr;
+      grid-template-areas: "logo search user";
+    }
+
+    .movie-grid{
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media  screen and (max-width: 320px) {
+    .grid-container{
+      grid-template: 80px 1fr 1fr 1fr / 1fr;
+      grid-template-areas: "header"
+                            "movies"
+                            "movies"
+                            "options";
+    }
+
+    .header{
+      grid-template: 40px /  1fr  1fr 1fr;
+      grid-template-areas: "logo search user";
+    }
+
+    .movie-grid{
+      grid-template-columns: 1fr;
+    }
   }
