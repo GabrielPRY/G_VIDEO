@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <img src="/images/burger.png" alt="burger" class="burger-button">
     <div class="grid-container">
         <header class="header">
             <i class="icon-movie logo"></i>
@@ -32,7 +33,7 @@
             <ul class="side-menu-list">
                 <li>
                     <a href="#">
-                        <i class="icon-home">
+                        <i class="icon-home menu-item">
                             <p>Home</p>
                         </i>
                     </a>
@@ -40,14 +41,14 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="icon-trending">
+                        <i class="icon-trending menu-item">
                             <p>Trending</p>
                         </i>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="icon-like">
+                        <i class="icon-like menu-item">
                             <p>Más likes</p>
                         </i>
                     </a>
@@ -185,13 +186,49 @@
 
         <div class="options">
             <a href="#">
-                <i class="icon-options">
+                <i class="icon-options menu-item">
                     <p>Ajustes</p>
                 </i>
             </a>
 
         </div>
     </div>
+
+    <script>
+        const phone = window.matchMedia('screen and (max-width: 320px)');
+
+        const side = document.querySelector('.side-menu');
+
+        const options = document.querySelector('.options');
+
+        const burger = document.querySelector('.burger-button')
+
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        phone.addListener(validator);
+
+        function validator(event) {
+            if (event.matches == true) {
+                burger.addEventListener('click', hideShow);
+                menuItems.forEach(e=>e.addEventListener('click',hideShow))
+            } else {
+                burger.removeEventListener('click', hideShow);
+                menuItems.forEach(e=>e.removeEventListener('click',hideShow))
+            }
+        }
+
+        validator(phone);
+
+        function hideShow(){
+            if(side.classList.contains('is-active')){
+                side.classList.remove('is-active');
+                options.classList.remove('is-active');
+            }else{
+                side.classList.add('is-active');
+                options.classList.add('is-active');
+            }
+        }
+    </script>
 </body>
 
 </html>

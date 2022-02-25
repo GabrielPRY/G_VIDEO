@@ -203,6 +203,17 @@
     margin-top: 4px;
   }
 
+  .burger-button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    position: fixed;
+    left: 15px;
+    top: 15px;
+    z-index: 2;
+    display: none;
+  }
+
   @media screen and (max-width: 1024px) {
     .grid-container{
       grid-template: 80px 1fr 1fr / 80px 1fr 1fr;
@@ -255,15 +266,17 @@
     .movie-grid{
       grid-template-columns: 1fr;
     }
+
+    .header-input-search{
+      padding: 0;
+    }
   }
 
   @media  screen and (max-width: 320px) {
     .grid-container{
-      grid-template: 80px 1fr 1fr 1fr / 1fr;
+      grid-template: 80px 1fr/ 1fr;
       grid-template-areas: "header"
                             "movies"
-                            "movies"
-                            "options";
     }
 
     .header{
@@ -273,5 +286,38 @@
 
     .movie-grid{
       grid-template-columns: 1fr;
+    }
+
+    .side-menu{
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      z-index: 1;
+      width: 30vh;
+      bottom: 0;
+      transition: .3s;
+    }
+
+    .options{
+      position: fixed;
+      top:20em;
+      left: -100vh;
+      z-index: 1;
+      width: 15vh;
+      bottom: 0;
+      transition: .3s;
+    }
+
+    .side-menu.is-active, .options.is-active{
+      left: 0;
+    }
+
+    .header-input-search{
+      padding: 0;
+      border: 1px solid black;
+    }
+
+    .burger-button{
+      display: block;
     }
   }
